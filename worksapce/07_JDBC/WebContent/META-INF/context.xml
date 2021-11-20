@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
 	<!-- Oracle 11g Express Edition -->
-	<Resource 
+	<Resource
 		name="jdbc/oracle11g" 
 		type="javax.sql.DataSource"
 		driverClassName="oracle.jdbc.driver.OracleDriver"
@@ -10,7 +10,8 @@
 		password="1111"
 		maxTotal="8"
 		maxIdle="2"
-		maxWaitMillis="5000" />
+		maxWaitMillis="5000"
+	/>
 	<!-- 
 		Resource 태그 주요 속성
 		1. name : Resource 등록 이름. 이름은 각자 지정. java에서 name으로 호출(JNDI)
