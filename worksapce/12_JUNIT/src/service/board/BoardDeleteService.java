@@ -6,11 +6,9 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.ibatis.exceptions.PersistenceException;
 import org.json.JSONObject;
 
 import dao.mybatis.BoardDAO;
-import dto.Board;
 
 public class BoardDeleteService implements BoardService {
 

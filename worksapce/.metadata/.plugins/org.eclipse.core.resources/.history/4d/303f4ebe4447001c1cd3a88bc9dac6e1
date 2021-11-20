@@ -1,9 +1,0 @@
-package dto;
-
-public class NOTICE {
-	private long nno;
-	private String writer;
-	private String title;
-	private String content;
-	private String
-}

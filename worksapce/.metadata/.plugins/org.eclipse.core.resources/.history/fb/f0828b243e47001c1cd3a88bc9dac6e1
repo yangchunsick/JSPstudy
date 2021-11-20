@@ -1,7 +1,0 @@
-/*
-	댓글형 게시판
-	1. 공지사항 : notice
-	2. 댓글      : reply 
- */
-DROP TABLE REPLY;
-DROP TABLE NOTICE;

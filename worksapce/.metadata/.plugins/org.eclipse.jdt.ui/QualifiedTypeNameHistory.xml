@@ -28,7 +28,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="service.member.MemberLogoutService"/>
 <fullyQualifiedTypeName name="service.member.MemberJoinService"/>
-<fullyQualifiedTypeName name="common.ModelAndView"/>
 <fullyQualifiedTypeName name="dto.Member"/>
 <fullyQualifiedTypeName name="dao.MemberDao"/>
 <fullyQualifiedTypeName name="service.member.MemberIdCheckService"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterAll"/>
 <fullyQualifiedTypeName name="dto.Board"/>
 <fullyQualifiedTypeName name="dao.mybatis.BoardDAO"/>
+<fullyQualifiedTypeName name="common.ModelAndView"/>
 </qualifiedTypeNameHistroy>
