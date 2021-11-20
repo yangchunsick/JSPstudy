@@ -1,0 +1,23 @@
+package dao;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import mybatis.config.DBService;
+
+public class MemberDAO {
+
+	private SqlSessionFactory factory;
+	
+	private static MemberDAO instance;
+	private MemberDAO() {
+		factory = DBService.getInstance().getFactory();
+	}
+	
+	public static MemberDAO getInstance() {
+		if(instance == null) {
+			instance = new MemberDAO();
+		}
+		
+	}
+	
+}

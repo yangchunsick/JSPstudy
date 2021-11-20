@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="dao.family">
+
+ <!-- 전체 Family 목록 불러오기 -->
+<select id="selectAllFamily" resultType="dto.Family">
+	SELECT num, name, depart, birthday
+	  FROM family
+	 ORDER BY num ASC
+</select>
+
+<!-- 전체 Family 수 -->
+<select id="getTotalCount" resultType="int">
+	SELECT COUNT(*)
+	  FROM family
+</select>
+
+<!-- 조직 등록 -->
+<insert id="insertFamily" parameterType="dto.Family">
+	INSERT INTO family
+	VALUES (#{num}, #{name}, #{depart}, #{birthday})
+</insert>
+
+<!-- 조직원 정보 조회 -->
+<select id="selectFamilyInfoByNum" parameterType="int" resultType="dto.Family">
+	SELECT num, name, depart, birthday
+	  FROM family
+	 WHERE num = #{num}
+</select>
+
+<!-- 조직원 정보 수정 -->
+<update id="updateFamily" parameterType="dto.Family">
+	UPDATE family
+	  SET num = #{num}, name = #{name}, depart = #{depart}, birthday = #{birthday}
+	 WHERE num = #{num}
+</update>
+
+<!-- 조직원 정보 삭제 -->
+<delete id="deleteFamily" parameterType="int">
+	DELETE
+	  FROM family
+	 WHERE num = #{num}
+
+</delete>
+
+
+
+
+</mapper>

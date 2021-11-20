@@ -1,0 +1,60 @@
+package dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import dto.Notice;
+import mybatis.config.DBService;
+
+public class NoticeDao {
+	
+	/* MyBatis는 SqlSession 객체를 이용해서 DB에 접근한다. */
+	/* SqlSession 객체는 메소드 별로 만들고 닫는 것이 좋다. SqlSession.close */
+	/* SqlSession 객체를 만들 수 있는 SqlSessionFactory를 준비해 둔다. */
+	
+	
+	/*DBSerivce에서 구현 했음*/
+	private SqlSessionFactory factory; 
+	
+																				/* DBService랑 깐부사이라고 생각하셈 */
+	/* singleton noticeDao 자기 자신을 객체로 만드는 행위 */
+	private static NoticeDao instance;
+	private NoticeDao() {
+		factory = DBService.getInstance().getFactory(); /* factory는 DBService로부터 얻어 왔다 */
+	}
+	public static NoticeDao getInstance() {
+		if(instance == null) {
+			instance = new NoticeDao();
+		}
+		return instance;
+	}
+	
+	/* 목록 반환 */
+	public List<Notice> selectNoticeList(){
+		SqlSession ss = factory.openSession();
+		List<Notice> list = ss.selectList("dao.notice.selectNoticeList");
+		ss.close();
+		return list;
+	}
+	
+	/**/
+	public Notice selectNoticeView(Long nNo) {
+		SqlSession ss = factory.openSession();
+		Notice notice = ss.selectOne("dao.notice.selectNoticeView", nNo);
+		ss.close();
+		return notice;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

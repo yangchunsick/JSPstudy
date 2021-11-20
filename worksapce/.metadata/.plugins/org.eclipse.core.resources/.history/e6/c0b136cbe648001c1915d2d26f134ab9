@@ -1,0 +1,19 @@
+package service.board;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class BoardInsertService implements BoardService {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		String bNo = request.getParameter("bNo");
+		String writer = request.getParameter("writer");
+		String content = request.getParameter("content");
+
+	}
+
+}

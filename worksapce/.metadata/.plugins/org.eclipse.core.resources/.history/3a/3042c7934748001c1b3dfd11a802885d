@@ -1,0 +1,25 @@
+package service.member;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+import dao.MemberDao;
+import dto.Member;
+
+public class MemberIdCheckService implements MemberService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String id = request.getParameter("id");
+		
+		Member member = new Member();
+		member.setId(id);
+		
+		Member user = MemberDao.getInstance().selectMember(member);
+		
+		return null;
+	}
+
+}

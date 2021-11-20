@@ -1,0 +1,11 @@
+package dao;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class MemberDAO {
+
+	private SqlSession factory;
+	
+	private static MemberDAO instance;
+	
+}

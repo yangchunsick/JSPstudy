@@ -1,0 +1,36 @@
+package dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import dto.Member;
+import dto.Reply;
+import mybatis.config.DBService;
+
+public class MemberDao {
+
+	private SqlSessionFactory factory;
+	
+	private static MemberDao instance;
+	private MemberDao() {
+		factory = DBService.getInstance().getFactory();
+	}
+	public static MemberDao getInstance() {
+		if(instance == null) {
+			instance = new MemberDao();
+		}
+		return instance;
+	}
+	
+	/* 로그인을 할 때 */
+	public Member selectMemberByIdPw(Member member) {
+		SqlSession ss = factory.openSession();
+		Member User = ss.selectOne("dao.member.selectMemberByIdPw", member);
+		ss.close();
+		return user;
+	}
+	
+	
+}

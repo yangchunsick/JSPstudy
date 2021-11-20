@@ -1,0 +1,22 @@
+package service.board;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.mybatis.BoardDAO;
+import dto.Board;
+
+public class BoardListService implements BoardService {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+		List<Board> list = BoardDAO.getInstance().selectBoardList();
+		
+
+	}
+
+}

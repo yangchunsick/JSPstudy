@@ -1,0 +1,8 @@
+/*
+	댓글형 게시판
+	1. 공지사항 : notice
+	2. 댓글      : reply 
+ */
+/* 자식이 먼저 없어져야 부모를 제거 할 수 있음*/
+DROP TABLE REPLY;
+DROP TABLE NOTICE;

@@ -1,0 +1,44 @@
+package service;
+
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+import dao.MemberDAO;
+import dto.MemberDTO;
+
+public class MemberJoinService implements MemberService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String ID	= request.getParameter("id");
+		String NAME = request.getParameter("name");
+		
+		
+		MemberDTO member = new MemberDTO();
+		member.setID(ID);
+		member.setNAME(NAME);
+		
+		int result = MemberDAO.getInstance().insertMember(member);
+		
+		PrintWriter out = response.getWriter();
+		if(result > 0) {
+			out.println("<script>");
+			out.println("location.href='/ServerProgram/loginPage.do'");
+			out.println("</script>");
+			out.close();
+		}else {
+			out.println("<script>");
+			out.println("alert('등록 실패')");
+			out.println("history.back()'");
+			out.println("</script>");
+			out.close();
+		}
+		
+		return null;
+	}
+
+}

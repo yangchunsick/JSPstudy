@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 패키지명.xml명 dao에 있는 reply.xml -->
+<mapper namespace="dao.reply">
+	<!-- 댓글을 작성하는 쿼리문 -->
+	<insert id="insertReply" parameterType="dto.Reply">
+		INSERT INTO REPLY
+		VALUES (REPLY_SEQ.NEXTVAL, #{writer}, #{content}, #{ip}, #{nNo}, SYSDATE)
+	</insert>	
+	<!-- 댓글 목록들을 가져오는 작업 -->
+	<select id="selectReplyList" parameterType="Long" resultType="dto.Reply">
+		SELECT RNO, WRITER, CONTENT, IP, NNO, RDATE
+		  FROM REPLY
+		 WHERE NNO = #{nNo}
+	</select>
+	<!-- 게시물을 지우기 전에 댓글을 지우는 작업 -->
+	
+
+</mapper>

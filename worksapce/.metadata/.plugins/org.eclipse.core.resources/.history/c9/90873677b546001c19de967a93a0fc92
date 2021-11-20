@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>회원 관리 시스템</h3>
+<a herf="#">로그아웃</a>
+<hr>
+<table>
+	<thead border="1">
+		<tr>
+			<td colspan="4">아이디</td>
+			<td>이름</td>
+			<td>등급</td>
+			<td>포인트</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${members.ID}</td>
+			<td><input type="text" name="name" value="${members.NAME}"></td>
+			<td>${members.GRADE}</td>
+			<td><input type="text" name="point" value="${members.point}"></td>
+		</tr>
+	</tbody>
+	<tfoot></tfoot>
+</table>
+
+</body>
+</html>

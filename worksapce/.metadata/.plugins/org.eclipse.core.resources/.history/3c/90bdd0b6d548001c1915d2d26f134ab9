@@ -1,0 +1,10 @@
+package dao.mybatis;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class BoardDAO {
+
+	private SqlSessionFactory factory;
+	private static BoardDAO instance = new BoardDAO();
+
+}
