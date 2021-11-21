@@ -46,12 +46,14 @@ public class FamilyController extends HttpServlet {
 		
 		/* 로그인 화면으로 이동 */
 		case "loginView.do":
-			mav = new ModelAndView("views/LoginView.jsp", false);
+			mav = new ModelAndView("views/loginView.jsp", false);
 			break;
 		
 		/* 회원가입 화면 */
 		case "joinView.do":
 			mav = new ModelAndView("views/joinView.jsp",false);
+			break;
+			
 		/* 조직원 목록 */
 		case "familyList.do":
 			familyService = new FamilyListService();

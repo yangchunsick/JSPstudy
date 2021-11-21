@@ -1,0 +1,115 @@
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing:border-box;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+    
+    header{
+        width: 100%;
+        background-color: rgb(192, 192, 192);
+    }
+
+    .out_and_search {
+        padding-top: 5px;
+        padding-left: 4px;
+    }
+    
+    .out_and_search > a{
+        padding-right: 10px;
+    }
+
+    .out_and_search > a:hover{
+        font-weight: 900;
+        color: crimson;
+    }
+
+    .search_box{
+        position: relative;
+        width: 200px; height: 34px;
+        border: 2px solid gray;
+        border-radius: 3px;
+        background-position: top 2.5px left 2px;
+        background-size: 29px 25px;
+        background-repeat: no-repeat;
+    }
+
+    .logo{
+        width: 160px; height: 84px;
+        margin: 20px 35px;
+        background-image: url(../images/logo.png);
+        background-size: cover;
+        
+    }
+        
+    .menu{
+        width: 100%; height: 50px;
+        background-color: rgb(61, 61, 61);
+    }
+
+    .menu > a{
+        padding: 5px 10px 5px 30px;
+        line-height: 50px;
+        font-size: 15px;
+        color: white;
+    }
+
+    .menu > a:hover{
+        font-weight: 900;
+        color:crimson;
+    }
+    
+    section{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .item{
+        width: 100%;
+    }
+
+    .item > h2{
+        margin: 15px;
+    }
+
+    .item > img {
+        width: 100%;
+    }
+
+    .item > ul{
+        list-style-type: square;
+        margin-left: 30px;
+    }
+    
+    .btn{
+        text-align: right;
+        margin-right: 80px;
+         
+    }
+    
+    footer{
+        margin-top: 20px;
+        width: 100%; height: 50px;
+        background-color: rgb(192, 192, 192);
+        text-align: center;
+        bottom: 0;
+    }
+    
+    .crop{
+        width: 100%; height: 50px;
+    }
+    
+    .crop > span{
+        line-height: 50px;
+        padding: 0 10px;
+    }
+
+    .crop > a:hover{
+        font-weight: 900;
+        color: crimson;
+    }
