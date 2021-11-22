@@ -13,6 +13,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 ORDER BY BNO
 	</select>
 	
+	<select id="selectBoardList" resultType="dto.Board">
+		SELECT NO, NAME, AGE, BIRTHDAY, REGDATE
+		  FROM MEMBER
+		 ORDER BY BNO
+	</select>
+	
 	<!-- 게시물 추가 ? -->
 	<insert id="insertBoard" parameterType="dto.Board">
 		INSERT INTO BOARD
