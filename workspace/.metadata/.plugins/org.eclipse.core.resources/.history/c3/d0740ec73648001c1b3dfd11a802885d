@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 패키지명.xml명 dao에 있는 notice.xml -->
+<mapper namespace="dao.member">
+
+	<select id="selectMember" parameterType="dto.Member" resultType="dto.Member">
+		SELECT MNO, ID, PW, NAME, EMAIL, MDATE
+		  FROM MEMBER
+		 WHERE	1 = 1
+		 <if test="id != null">AND ID = #{id}</if> 
+		 <if test="pw != null">AND PW = #{pw}</if>
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+package service.free;
+
+import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+
+public class FreeViewService implements FreeService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// 파라미터
+		Optional<String> opt = Optional.ofNullable(request.getParameter("fNo"));
+		Long fNo = Long.parseLong(opt.orElse("0"));
+
+		// 불러오기
+		
+		
+		return null;
+	}
+
+}

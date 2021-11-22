@@ -1,0 +1,12 @@
+package dao;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class ReplyDao {
+
+	private SqlSessionFactory factory;
+	
+	private static ReplyDao factory;
+	
+	
+}

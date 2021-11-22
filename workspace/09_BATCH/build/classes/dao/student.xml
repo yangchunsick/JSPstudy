@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="dao.student">	<!-- package.filename -->
+
+
+	<!-- 1. 학생 목록 -->
+	<select id="selectAllStudent" resultType="dto.Student" >	<!-- 반환 : resultType dto package의 Student Class라는 뜻-->
+		SELECT sno, name, kor, eng, mat, ave, grade
+		  FROM student
+		 ORDER BY sno ASC	
+	</select>
+
+	<!-- 2. 전체 학생 수 -->
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*)
+		  FROM student
+	</select>
+
+	<!-- 3. 전체 학생 평균 -->
+	<select id="getAverage" resultType="double">
+		SELECT NVL(AVG(ave), 0)
+		  FROM student
+	</select>
+
+	<!-- 4. 학생 추가하기 -->
+	<insert id="insertStudent" parameterType="dto.Student">		<!-- package . class name -->
+		INSERT INTO student 
+		VALUES (#{sno}, #{name}, #{kor}, #{eng}, #{mat}, #{ave}, #{grade})
+	</insert>
+
+	<!-- 5. 학생 삭제하기 -->
+	<delete id="deleteStudent" parameterType="String">
+		DELETE
+		  FROM student
+		 WHERE sno = #{sno}
+	</delete>
+	
+	<!-- 6. 학생 정보 조회 -->
+	<select id="selectStudentBySno" parameterType="String" resultType="dto.Student">
+		SELECT sno, name, kor, eng, mat, ave, grade
+		  FROM student
+		 WHERE sno = #{sno}
+	</select>
+
+	<!-- 7. 학생 정보 수정-->
+	<update id="updateStudent" parameterType="dto.Student">
+		UPDATE student
+		   SET name = #{name}, kor = #{kor}, eng = #{eng}, mat = #{mat}, ave = #{ave}, grade = #{grade}
+		 WHERE sno = #{sno}
+	</update>
+
+	<!-- 8. TOP3 목록 반환 -->
+	<select id="selectTop3List" resultType="dto.Student">
+	  SELECT a.sno, a.name, a.kor, a.eng, a.mat, a.ave, a.grade
+	    FROM (SELECT sno, name, kor, eng, mat, ave, grade
+	    	    FROM student
+	    	   ORDER BY ave DESC) a
+	   WHERE <![CDATA[ROWNUM <= 3]]>
+	<!-- 부등호 사용 방법. -->
+	</select>
+
+
+
+
+
+
+</mapper>

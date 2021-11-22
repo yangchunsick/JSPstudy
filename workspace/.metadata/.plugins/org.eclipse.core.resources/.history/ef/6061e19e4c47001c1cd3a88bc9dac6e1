@@ -1,0 +1,5 @@
+package service.notice;
+
+public interface NoticeService {
+
+}

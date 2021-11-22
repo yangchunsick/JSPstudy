@@ -1,0 +1,25 @@
+package service.notice;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+import dao.NoticeDao;
+import dto.Notice;
+
+public class NoticeListService implements NoticeService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		List<Notice> list = NoticeDao.getInstance().selectNoticeList();
+							/*list라는 이름으로 위에 있는 list를 저장한다.*/
+		request.setAttribute("list", list);
+		
+		
+		return new ModelAndView("", false);
+	}
+
+}

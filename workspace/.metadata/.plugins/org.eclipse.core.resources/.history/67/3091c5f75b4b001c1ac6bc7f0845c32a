@@ -1,0 +1,56 @@
+package dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import dto.Free;
+import mybatis.config.DBService;
+
+public class FreeDAO {
+
+	private SqlSessionFactory factory;
+	
+	private static FreeDAO instance;
+	private FreeDAO() {
+		factory = DBService.getInstance().getFactory();
+	}
+	public static FreeDAO getInstance() {
+		if(instance == null) {
+			instance = new FreeDAO();
+		}
+		return instance;
+	}
+	
+	// 목록 가져오기
+	public List<Free> selectFreeList(){
+		SqlSession ss = factory.openSession();
+		List<Free> list = ss.selectList("dao.free.selectFreeList");
+		ss.close();
+		return list;
+	}
+	
+	// 전체 게시물 수 구하기
+	public int selectTotalCount() {
+		SqlSession ss = factory.openSession();
+		int totalCount = ss.selectOne("dao.free.selectTotalCount");
+		ss.close();
+		return totalCount;
+	}
+	
+	/* 게시물 추가하기 */
+	public int insertFree(Free free) {
+		SqlSession ss = factory.openSession();
+		int result = ss.insert("dao.free.insertFree", free);
+		ss.close();
+	}
+	
+
+	
+	
+	
+	
+	
+	
+}

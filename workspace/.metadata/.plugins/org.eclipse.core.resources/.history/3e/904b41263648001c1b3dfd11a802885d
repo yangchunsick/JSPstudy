@@ -1,0 +1,28 @@
+package service.member;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+import dto.Member;
+
+public class MemberLoginService implements MemberService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		// DB에 보내기 위해 만듬
+		Member member = new Member();
+		member.setId(id);
+		member.setPw(pw);
+		
+		
+		
+		
+		return null;
+	}
+
+}

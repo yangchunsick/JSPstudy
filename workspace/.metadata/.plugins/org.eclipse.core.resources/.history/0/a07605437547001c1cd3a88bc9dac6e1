@@ -1,0 +1,46 @@
+package service.reply;
+
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+import dao.ReplyDao;
+import dto.Reply;
+
+public class ReplyInsertService implements ReplyService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// request를 받아 온다.
+		String writer = request.getParameter("writer");
+		String content = request.getParameter("content");
+		Long nNo = Long.parseLong(request.getParameter("nNo"));
+		String ip = request.getRemoteAddr();
+		
+		Reply reply = new Reply();
+		reply.setWriter(writer);
+		reply.setContent(content);
+		reply.setnNo(nNo);
+		reply.setIp(ip);
+		
+		int result = ReplyDao.getInstance().insertReply(reply);
+		
+		if(result > 0) {
+			
+		}else {
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('일치하는 공지사항이 없습니다. 다시 시도하세요.')");
+			out.println("history.back()");
+			out.println("</script>");
+			out.close();
+			return null;			
+		}
+		
+		return null;
+	}
+
+}

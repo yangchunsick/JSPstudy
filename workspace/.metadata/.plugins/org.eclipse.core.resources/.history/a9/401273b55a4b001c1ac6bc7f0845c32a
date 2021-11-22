@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 패키지명.xml명 dao에 있는 free.xml -->
+<mapper namespace="dao.free">
+
+	<!-- 목록 가져오기 -->
+	<select id="selectFreeList" resultType="dto.Free">
+		SELECT FNO, WRITER, CONTENT, IP, HIT, CREATED, LASTMODIFIED, STATE, DEPTH, GROUPNO, GROUPORD
+		  FROM FREE
+	</select>
+
+	<!-- 게시물 수 가져오기 -->
+	<select id="selectTotalCount" resultType="int">
+		SELECT COUNT(*)
+		  FROM FREE
+	</select>
+	
+	<!-- 게시물 추가하기 -->
+
+
+</mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+package dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import dto.Free;
+import mybatis.config.DBService;
+
+public class FreeDAO {
+
+	private SqlSessionFactory factory;
+	
+	private static FreeDAO instance;
+	private FreeDAO() {
+		factory = DBService.getInstance().getFactory();
+	}
+	public static FreeDAO getInstance() {
+		if(instance == null) {
+			instance = new FreeDAO();
+		}
+		return instance;
+	}
+	
+	public List<Free> selectFreeList
+	
+
+	
+	
+	
+	
+	
+	
+}
