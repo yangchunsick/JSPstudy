@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 	
 	<mappers>
-        <mapper resource="dao/member.xml"/>
+        <mapper resource="dao/staff.xml"/>
 	</mappers>
 	
 </configuration>

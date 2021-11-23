@@ -8,16 +8,13 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class DBService {
 
-	/* SqlSessionFactory */
 	private SqlSessionFactory factory;
 	public SqlSessionFactory getFactory() {
 		return factory;
 	}
 	
-	/* singleton */
 	private static DBService instance;
 	private DBService() {
-		/* SqlSessionFactory 빌드 */
 		try {
 			String resource = "mybatis/config/mybatis-config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
