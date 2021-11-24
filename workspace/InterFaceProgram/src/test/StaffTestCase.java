@@ -1,8 +1,8 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,9 +27,9 @@ class StaffTestCase {
 	}	
 	
 	
-	// @Test
+	@Test
 	void test() {
-		Staff staff = StaffDAO.getInstance().selecStaffSNOTest("9999");
+		Staff staff = StaffDAO.getInstance().selecStaffBysNo("99999");
 		assertNotNull(staff, "사원 검색에 문제가 있습니다.");
 	}
 

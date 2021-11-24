@@ -36,19 +36,11 @@ public class StaffDAO {
 		return result;
 	}
 	
-	/****/
-	public int deleteStaff(String sNo) {
-		SqlSession ss = factory.openSession(false);
-		int result = ss.delete("dao.mybatis.board.deleteBoard", sNo);
-		if(result > 0 ) ss.commit();
-		ss.close();
-		return result;
-	}
+	/****/	
 	
-	
-	public Staff selecStaffSNOTest(String sNo) {
+	public Staff selecStaffBysNo(String sNo) {
 		SqlSession ss = factory.openSession();
-		Staff staff = ss.selectOne("dao.staff.selecStaffSNOTest", sNo);
+		Staff staff = ss.selectOne("dao.staff.selecStaffBysNo", sNo);
 		ss.close();
 		return staff;
 	}

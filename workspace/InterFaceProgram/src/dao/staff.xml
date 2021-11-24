@@ -16,6 +16,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES (#{sNo}, #{name}, #{dept}, SYSDATE)
 	</insert>
 	
+	<select id="selecStaffBysNo" >
+		SELECT SNO, NAME, DEPT, REGDATE
+		  FROM STAFF
+		 ORDER BY SNO = #{sNo}		
+	</select>
+	
 </mapper>
 
 
