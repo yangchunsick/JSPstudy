@@ -13,11 +13,9 @@ public class Free {
 	private Date lastModified;
 	private int state;
 	private int depth;
-	private Long group;
-	private int groupNo;
-	private int groupOrd;
-	
-	/* getter setter */
+	private int group;
+	private Long groupNo;
+	private Long groupOrd;
 	public Long getfNo() {
 		return fNo;
 	}
@@ -72,29 +70,33 @@ public class Free {
 	public void setDepth(int depth) {
 		this.depth = depth;
 	}
-	public Long getGroup() {
+	public int getGroup() {
 		return group;
 	}
-	public void setGroup(Long group) {
+	public void setGroup(int group) {
 		this.group = group;
 	}
-	public int getGroupNo() {
+	public Long getGroupNo() {
 		return groupNo;
 	}
-	public void setGroupNo(int groupNo) {
+	public void setGroupNo(Long groupNo) {
 		this.groupNo = groupNo;
 	}
-	public int getGroupOrd() {
+	public Long getGroupOrd() {
 		return groupOrd;
 	}
-	public void setGroupOrd(int groupOrd) {
+	public void setGroupOrd(Long groupOrd) {
 		this.groupOrd = groupOrd;
 	}
-	
 	@Override
 	public String toString() {
 		return "Free [fNo=" + fNo + ", writer=" + writer + ", content=" + content + ", ip=" + ip + ", hit=" + hit
 				+ ", created=" + created + ", lastModified=" + lastModified + ", state=" + state + ", depth=" + depth
 				+ ", group=" + group + ", groupNo=" + groupNo + ", groupOrd=" + groupOrd + "]";
 	}
+	
+	/* getter setter */
+	
+	
+
 }

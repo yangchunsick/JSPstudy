@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=11_MYHOME/src&lt;service.reply{ReplyService.java[ReplyService" modifiers="513" timestamp="1637131464963"/>
-<typeInfo handle="=11_MYHOME/src&lt;service.notice{NoticeService.java[NoticeService" modifiers="513" timestamp="1637115553240"/>
 <typeInfo handle="=11_MYHOME/src&lt;service.member{MemberService.java[MemberService" modifiers="513" timestamp="1637213553068"/>
+<typeInfo handle="=11_MYHOME/src&lt;service.notice{NoticeService.java[NoticeService" modifiers="513" timestamp="1637115553240"/>
 <typeInfo handle="=11_MYHOME/src&lt;service.free{FreeService.java[FreeService" modifiers="513" timestamp="1637552362756"/>
-<typeInfo handle="=InterFaceProgram/src&lt;service{StaffService.java[StaffService" modifiers="513" timestamp="1637648125932"/>
 </typeInfoHistroy>

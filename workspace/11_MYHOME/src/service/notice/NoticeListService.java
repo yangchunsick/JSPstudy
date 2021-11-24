@@ -28,6 +28,20 @@ public class NoticeListService implements NoticeService {
 			session.removeAttribute("open");
 		}
 		
+		// 페이징 
+		// 1. 현재 페이지 번호 확인하기
+		
+		
+		// 2. 현제 페이지 번호 확인하기
+		// Page가 안 넘어오면 page = 1로 처리함
+		
+		
+		// 3. 페이징에 필요한 모든 계산 처리하기
+		
+		
+		// 4. String < 1 2 3 4 5 > 만들기
+		
+			
 		List<Notice> list = NoticeDao.getInstance().selectNoticeList();
 							/*list라는 이름으로 위에 있는 list를 저장한다.*/
 		

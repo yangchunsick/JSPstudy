@@ -42,7 +42,7 @@ public class FreeDao {
 	
 	/* 게시물 추가하기 */
 	public int insertFree(Free free) {
-		SqlSession ss = factory.openSession();
+		SqlSession ss = factory.openSession(false);
 		int result = ss.insert("dao.free.insertFree", free);
 		if(result > 0) ss.commit();
 		ss.close();
@@ -59,7 +59,7 @@ public class FreeDao {
 	
 	/* 게시물 조회수 증가 */
 	public int updateHit(Long fNo) {
-		SqlSession ss = factory.openSession();
+		SqlSession ss = factory.openSession(false);
 		int result = ss.insert("dao.free.updateHit", fNo);
 		if(result > 0) ss.commit();
 		ss.close();
@@ -68,7 +68,7 @@ public class FreeDao {
 	
 	/* 게시물 수정 */
 	public int updateFree(Free free) {
-		SqlSession ss = factory.openSession();
+		SqlSession ss = factory.openSession(false);
 		int result = ss.insert("dao.free.updateFree", free);
 		if(result > 0) ss.commit();
 		ss.close();
@@ -77,17 +77,45 @@ public class FreeDao {
 	
 	/* 게시물 삭제 status를 0에서 -1로 수정 함으로 삭제 처리가 되는 것임 */
 	public int deleteFree(Long fNo) {
-		SqlSession ss = factory.openSession();
-		int result = ss.insert("dao.free.deleteFree", fNo);
+		SqlSession ss = factory.openSession(false);
+		int result = ss.update("dao.free.deleteFree", fNo);
 		if(result > 0) ss.commit();
 		ss.close();
 		return result;
 	}
+	
+	/* 게시물 댓글 추가 */
+	public int insertReply(Free reply) {
+		SqlSession ss = factory.openSession(false);
+		int result = ss.insert("dao.free.insertReply", reply);
+		if(result > 0) ss.commit();
+		ss.close();
+		return result;
+	}
+	
+	/* 게시물 댓글 추가 */
+	public int updatePreviousReplyGroupOrd(Free free) {
+		SqlSession ss = factory.openSession(false);
+		int result = ss.update("dao.free.updatePreviousReplyGroupOrd", free);
+		if(result > 0) ss.commit();
+		ss.close();
+		return result;
+	}
+	
+	// 목록 검색하기
+	public List<Free> findFree(Map<String, String> map){
+		SqlSession ss = factory.openSession();
+		List<Free> list = ss.selectList("dao.free.findFree", map);
+		ss.close();
+		return list;
+	}
+	
+	/* 검색된 게시글 갯수 구하기 */
+	public int selectFindCount(Map<String, String> map) {
+		SqlSession ss = factory.openSession();
+		int count = ss.selectOne("dao.free.selectFindCount", map);
+		ss.close();
+		return count;
+	}
 
-	
-	
-	
-	
-	
-	
 }

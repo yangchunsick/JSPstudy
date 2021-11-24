@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import common.ModelAndView;
 import service.notice.NoticeDeleteService;
+import service.notice.NoticeFindService;
 import service.notice.NoticeInsertService;
 import service.notice.NoticeListService;
 import service.notice.NoticeService;
@@ -74,6 +75,11 @@ public class NoticeController extends HttpServlet {
 			
 		case "delete.notice":
 			service = new NoticeDeleteService();
+			break;
+			
+		case "find.notice":
+			service = new NoticeFindService();
+			break;
 		}
 
 		// service가 사용되지 않은 경우 (단순 이동) service 실행이 불가능
