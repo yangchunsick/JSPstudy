@@ -18,22 +18,19 @@ class StaffTestCase {
 		staff.setsNo("99999");
 		staff.setName("테스트");
 		staff.setDept("테스트부서");
-		
-		int result = StaffDAO.getInstance().insertStaff(staff);
-		assertEquals(1, result, "등록 오류");
-		
+		int result = 0;
+		try {
+			result = StaffDAO.getInstance().insertStaff(staff);
+			
+		}catch (Exception e){}
+			assertEquals(1, result, "사원 등록에 문제가 있습니다.");			
 	}	
-	
-	// @AfterEach
-	void 후처리작업() {
-		int result = StaffDAO.getInstance().deleteStaff("99999");
-		assertEquals(1, result, "알 수 없는 오류");
-	}
 	
 	
 	// @Test
-	void 사원_번호_조회() {
-		assertNotNull(StaffDAO.getInstance().selecStaffSNOTest("99999"));
+	void test() {
+		Staff staff = StaffDAO.getInstance().selecStaffSNOTest("9999");
+		assertNotNull(staff, "사원 검색에 문제가 있습니다.");
 	}
 
 }
