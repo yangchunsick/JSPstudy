@@ -1,0 +1,20 @@
+package dto;
+
+import java.sql.Date;
+
+public class Free {
+	
+	private Long fNo;
+	private String writer;
+	private String content;
+	private String ip;
+	private Long hit;
+	private Date created;
+	private Date lastModified;
+	private int state;
+	private int depth;
+	private Long group;
+	private int groupNo;
+	private int groupOrd;
+
+}

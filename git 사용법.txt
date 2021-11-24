@@ -1,0 +1,23 @@
+(1) 로컬 저장소를 지정
+git init
+
+(2) 사용자의 이름과 이메일 등록
+git config user.name yangchunsick
+git config user.email mrvin79@naver.com
+
+(2) 원격 저장소의 경로를 잡기
+git remote add origin https://github.com/yangchunsick/jspstudy.git
+
+(3) 최초 1회는 pull 작업
+git pull origin main --allow-unrelated-histories
+
+/* 프로젝트 생성(?) */
+
+(4) 최초 1회는 add와 commit을 따로 작업을 해야한다.
+git add .
+
+(5) 최초 1회는 add와 commit을 따로 작업을 해야한다.
+git commit -m '커밋 메세지'
+
+(4) push 작업
+git push origin main

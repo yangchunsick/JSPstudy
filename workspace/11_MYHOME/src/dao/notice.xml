@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 패키지명.XML명 DAO에 있는 NOTICE.XML -->
+<mapper namespace="dao.notice">
+
+	<!-- 전체 목록 반환 -->
+	<select id="selectNoticeList" resultType="dto.Notice">
+		SELECT NNO, WRITER, TITLE, CONTENT, HIT, IP, NDATE, NLASTMODIFIED
+		  FROM NOTICE
+	</select>
+	<!-- 게시물이 갖고 있는 번호를 가져와서 해당 게시물 내용보기 -->
+	<select id="selectNoticeView" resultType="dto.Notice" parameterType="Long">
+		SELECT NNO, WRITER, TITLE, CONTENT, HIT, IP, NDATE, NLASTMODIFIED
+		  FROM NOTICE
+		 WHERE NNO = #{nNo}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateNoticeHit" parameterType="Long">
+		UPDATE NOTICE
+		   SET HIT = HIT + 1
+		 WHERE NNO = #{nNo}	
+	</update>
+	<!-- 게시글 작성 -->
+	<insert id="insertNotice" parameterType="dto.Notice">
+		INSERT INTO NOTICE
+		VALUES (NOTICE_SEQ.NEXTVAL, #{WRITER}, #{TITLE}, #{CONTENT}, 0, #{IP}, SYSDATE, SYSDATE)
+	</insert>
+	<!-- 게시물 수정 -->
+	<update id="updateNotice" parameterType="dto.Notice">
+		UPDATE NOTICE
+		   SET TITLE = #{TITLE}, CONTENT = #{CONTENT}, NLASTMODIFIED = SYSDATE
+		 WHERE NNO = #{nNo}	
+	</update>
+	<!-- 게시물 삭제 -->
+	<delete id="deleteNotice" parameterType="Long">
+		DELETE
+		  FROM NOTICE
+		 WHERE NNO = ${nNo}
+	</delete>
+	
+	<!-- 검색어 -->
+	<!-- 
+		${COLUMN} : 작은 따옴표(') 안 붙음
+					숫자 또는 칼럼으로 사용 가능
+		#{QUERY}  : 작은 따옴표(')가 붙음
+					문자용으로 사용
+					단, 숫자용으로 사용할 수 있음
+	 -->
+	<select id="findNotice" parameterType="map" resultType="dto.Notice">
+		SELECT NNO, WRITER, TITLE, CONTENT, HIT, IP, NDATE, NLASTMODIFIED
+		  FROM NOTICE
+		 WHERE <if test="column != 'ALL'">${column} LIKE #{query}</if>
+		 		<if test="column == 'ALL'">WRITER LIKE #{query} OR TITLE LIKE #{query} OR CONTENT LIKE #{query}</if>
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+

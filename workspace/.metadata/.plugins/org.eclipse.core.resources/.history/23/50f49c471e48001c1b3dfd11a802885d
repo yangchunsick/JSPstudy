@@ -1,0 +1,42 @@
+ package service.notice;
+
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+import dao.NoticeDao;
+import dto.Notice;
+
+public class NoticeDeleteService implements NoticeService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		Long nNo = Long.parseLong(request.getParameter("nNo"));
+	
+		// singletone 작업을 했기 때문에 불러 올 수 있다
+		// DAO에서 작업한 insertNotice를 불러옴
+		int result = NoticeDao.getInstance().deleteNotice(nNo);
+
+		PrintWriter out = response.getWriter();
+		if(result > 0) {
+			out.println("<script>");
+			out.println("alert('삭제 성공 !')");
+			out.println("location.href='view.notice?nNo="+ nNo + "'");
+			out.println("</script>");
+			out.close();
+		}else {
+			out.println("<script>");
+			out.println("alert('수정 실패..')");
+			out.println("history.back()'");
+			out.println("</script>");
+			out.close();
+		}
+		
+		// 위에 if else 어쩌구로 어디로 갈지 정했기 때문에 리턴 값을 안 적어줘도 됌
+		return null;
+	}
+
+}

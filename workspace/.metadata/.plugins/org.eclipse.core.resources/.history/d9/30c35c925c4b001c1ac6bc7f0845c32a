@@ -1,0 +1,26 @@
+package service.free;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+
+public class FreeInsertService implements FreeService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// 파라미터
+		String writer = request.getParameter("writer");
+		String content = request.getParameter("content");
+		String ip = request.getRemoteAddr();
+		String ip = request.getHeader("X-Forwarded-For");
+		if(ip = null) {
+			ip = request.getRemoteAddr();
+		}
+		int hit = Integer.parseInt(request.getParameter("hit"));
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/123.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .wrap {
+            width: 1500px;
+            padding: 10px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .input_area {
+            width: 300px;
+            padding: 10px;
+        }
+        
+        .list_area {
+            width: 1200px;
+            padding: 10px;
+        }
+        
+        .list_area table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .list_area table td {
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            padding: 3px 5px;
+            text-align: center;
+        }
+        </style>
+     </head>
+     <body>
+     
+         <div class="wrap">
+             <div class="input_area">
+                 <form id="f" action="">
+                     <input type="text" name="no" id="no" placeholder="6자리 번호"><br>
+                     <input type="text" name="writer" id="writer" placeholder="회원명"><br>
+                     <input type="text" name="age" id="age" placeholder="나이"><br>
+                     <input type="text" name="birthday" id="birthday" placeholder="생일"><br>
+                     <input type="button" value="등록" id="insert_btn">
+                 </form>
+             </div>
+             <div class="list_area">
+                 <table>
+                     <thead>
+                         <tr>
+                             <td>회원번호</td>
+                             <td>회원명</td>
+                             <td>나이</td>
+                             <td>생일</td>
+                             <td>가입일</td>
+                             <td>비고</td>
+                         </tr>
+                     </thead>
+                     <tbody id="member_list">
+     
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+     </body>
+     </html>

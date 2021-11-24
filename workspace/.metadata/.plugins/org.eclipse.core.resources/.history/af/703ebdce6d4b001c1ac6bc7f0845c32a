@@ -1,0 +1,21 @@
+package service.free;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.ModelAndView;
+
+public class FreeUpdateService implements FreeService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		
+		Long fNo = Long.parseLong(request.getParameter("fNo"));
+		String content = request.getParameter("content");
+		
+		
+		return null;
+	}
+
+}

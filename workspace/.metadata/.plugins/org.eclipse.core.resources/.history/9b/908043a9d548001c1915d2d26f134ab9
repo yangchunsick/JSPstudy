@@ -1,0 +1,7 @@
+package dao.mybatis;
+
+public class BoardDAO {
+
+	
+	
+}

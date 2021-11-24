@@ -1,0 +1,11 @@
+package service;
+
+import javax.servlet.http.HttpServletRequest;
+
+import common.ModelAndView;
+
+public interface SPMService {
+
+	public ModelAndView execute(HttpServletRequest request)
+	
+}

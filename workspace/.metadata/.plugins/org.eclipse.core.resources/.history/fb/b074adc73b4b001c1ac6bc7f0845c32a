@@ -1,0 +1,25 @@
+package service.member;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import common.ModelAndView;
+
+public class MemberLeaveSerivec implements MemberService {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		// 탈퇴하고자 하는 mNo, id 가져오기
+		HttpSession session = request.getSession();
+		
+		Long mNo = (Long) session.getAttribute("mNo");
+		String id = (String) session.getAttribute("id");
+		
+		
+		
+		return null;
+	}
+
+}
