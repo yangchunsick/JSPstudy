@@ -2,11 +2,12 @@
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\양희민\Desktop\SmartWeb\jspstudy\workspace"/>
 			<item value="C:\Users\ITSC\Desktop\ReServerProgram-master"/>
 			<item value="C:\Users\ITSC\Desktop\09_BATCH2"/>
 			<item value="C:\Users\ITSC\Desktop\SmartWeb\jspstudy\workspace"/>

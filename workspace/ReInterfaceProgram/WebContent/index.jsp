@@ -11,6 +11,7 @@
 <script>
 	$(document).ready(function(){
 		fnStudentList();
+		fnStudentInsert();
 	});
 	/* 목록 */
 	function fnStudentList() {
@@ -24,6 +25,10 @@
 				$.each(students, function(i, student){
 					$('<tr>')								// tr 태그를 만들어서 그 안에
 					.append($('<td>').text(student.sno))	// td 태그를 만들고 students 안에 있는 sno를 꺼낸다 !
+					.append($('<td>').text(student.name))
+					.append($('<td>').text(student.midterm))
+					.append($('<td>').text(student.finalterm))
+					.append($('<td>').text(student.pass))
 					.appendTo('#student_list');				// student_list에 넣는다 !
 				});
 			},
@@ -32,12 +37,52 @@
 			}
 		}); // end ajax
 	} // end fnStudentList
-	/**/
+	
+	/* 추가 */
+	function fnStudentInsert() {
+		$('#insert_btn').on('click', function() {
+			let regsno = /^[0-9]{5}$/;
+			if(!regsno.test($('#sno').val())){
+				alert('학번은 5자리 숫자 입니다.');
+				return;
+			}
+			let regname = /^[가-힣]{1,32}$/;
+			if(!regname.test($('#name').val())){
+				alert('학생명을 다시 입력하세요.');
+				return;
+			}
+			let regscore = /^[0-9]{1}$|^[1-4]{1}[0-9]{1}$|^100$/;
+			if(!regscore.test($('#midterm').val()) || !regscore.test($('#finalterm').val())){
+				alert('점수를 정확히 입력하세요.');
+			}
+		})
+		$.ajax({
+			url : 'studentInsert.do',
+			type: 'post',
+			dataType : 'json',
+			success : function() {
+				
+			},
+			error : function(xhr) {
+				
+			}
+		}); //end ajax
+	} // end fnStudentInsert
+	
+	
 	
 </script>
 </head>
 <body>
-
+	
+	<form id="f" action="">
+		<input type="text" name="sno" id="sno" placeholder="학번">
+		<input type="text" name="name" id="name" placeholder="학생명">
+		<input type="text" name="midterm" id="midterm" placeholder="중간 고사">
+		<input type="text" name="finalterm" id="finalterm" placeholder="기말 고사">
+		<input type="submit" id="insert_btn" value="등록">
+	</form>
+<hr>
 	<table border="1">
 		<thead>
 			<tr>
