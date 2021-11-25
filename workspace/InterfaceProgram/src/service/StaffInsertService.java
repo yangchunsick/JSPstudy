@@ -40,14 +40,6 @@ public class StaffInsertService implements StaffService {
 			out.println(obj);
 			out.close();
 
-		} catch(TypeException e) {
-			response.setContentType("text/plain; charset=UTF-8");
-
-			PrintWriter out = response.getWriter();
-			out.println("입력란을 확인 해주세요");
-			
-			response.setStatus(1002);
-		
 		} catch(PersistenceException e) {
 			response.setContentType("text/plain; charset=UTF-8");
 			

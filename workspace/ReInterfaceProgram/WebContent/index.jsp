@@ -43,31 +43,27 @@
 		$('#insert_btn').on('click', function() {
 			let regsno = /^[0-9]{5}$/;
 			if(!regsno.test($('#sno').val())){
-				alert('학번은 5자리 숫자 입니다.');
+				alert('학번을 다시 입력하세요.');
 				return;
 			}
-			let regname = /^[가-힣]{1,32}$/;
-			if(!regname.test($('#name').val())){
-				alert('학생명을 다시 입력하세요.');
-				return;
-			}
-			let regscore = /^[0-9]{1}$|^[1-4]{1}[0-9]{1}$|^100$/;
-			if(!regscore.test($('#midterm').val()) || !regscore.test($('#finalterm').val())){
-				alert('점수를 정확히 입력하세요.');
-			}
-		})
+			
 		$.ajax({
 			url : 'studentInsert.do',
 			type: 'post',
+			data: $('#f').serialize(),
 			dataType : 'json',
-			success : function() {
-				
+			success : function(obj) {
+				alert('학생 등록이 성공했습니다.');
+				fnStudentList();				
 			},
 			error : function(xhr) {
-				
+				if(xhr.status == 2001 || xhr.status == 2003 || xhr.status == 2004){
+					alert(xhr.responseText);
+				}
 			}
 		}); //end ajax
-	} // end fnStudentInsert
+	});
+} // end fnStudentInsert
 	
 	
 	

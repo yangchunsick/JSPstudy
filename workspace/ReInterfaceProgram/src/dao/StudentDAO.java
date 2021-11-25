@@ -11,7 +11,6 @@ import dto.Student;
 
 public class StudentDAO {
 
-	/* Singleton */
 	private static StudentDAO instance;
 
 	private StudentDAO() {
@@ -25,13 +24,13 @@ public class StudentDAO {
 		return instance;
 	}
 
-	/* field */
+
 	private Connection con;
 	private PreparedStatement ps;
 	private ResultSet rs;
 	private String sql;
 
-	/* method */
+
 	private Connection getConnection() {
 		Connection con = null;
 		try {
@@ -63,20 +62,20 @@ public class StudentDAO {
 	
 	/** 학생 목록 반환  **/
 	public List<Student> selectStudentList(){
-		List<Student> list = new ArrayList<Student>();	// JSON 형식의
+		List<Student> list = new ArrayList<Student>();
 		try {
 			con = getConnection();
 			sql = "SELECT SNO, NAME, MIDTERM, FINALTERM, PASS FROM STUDENT";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			while (rs.next()) {	// rs가 데이터를 가지고 있냐 ?
+			while (rs.next()) {
 				Student student = new Student();
-				student.setSno(rs.getString(1));	// DB 요소 인덱스 번호
-				student.setName(rs.getString(2));	// DB 요소 인덱스 번호
-				student.setMidterm(rs.getInt(3));	// DB 요소 인덱스 번호
-				student.setFinalterm(rs.getInt(4));	// DB 요소 인덱스 번호
-				student.setPass(rs.getString(5));	// DB 요소 인덱스 번호
-				list.add(student);					// list에 set 어쩌구 저쩌구를 다 담았음
+				student.setSno(rs.getString(1));	
+				student.setName(rs.getString(2));	
+				student.setMidterm(rs.getInt(3));	
+				student.setFinalterm(rs.getInt(4));	
+				student.setPass(rs.getString(5));	
+				list.add(student);					
 			}
 			
 		}catch(Exception e) {
@@ -84,7 +83,39 @@ public class StudentDAO {
 		}finally {
 			close(con, ps, rs);
 		}
-		return list;								// list를 반환
+		return list;								
+	}
+
+	public int insertStudent(Student student) throws Exception {
+		int result = 0;
+		con = getConnection();
+		sql = "INSERT INTO STUDENT VALUES(?, ?, ?, ?, ?)";
+		ps = con.prepareStatement(sql);
+		ps.setString(1, student.getSno());
+		ps.setString(2, student.getName());
+		ps.setInt(3, student.getMidterm());
+		ps.setInt(4, student.getFinalterm());
+		ps.setString(5, student.getPass());
+		result = ps.executeUpdate();
+		close(con, ps, null);
+		return result;
+	}
+	
+	public int deleteStudent(String sno) throws Exception {
+		int result = 0;
+		try {
+			con = getConnection();
+			sql = "DELETE FROM STUDENT WHERE SNO = ?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, sno);
+			result = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(con, ps, null);
+		}
+		return result;
+		
 	}
 	
 	

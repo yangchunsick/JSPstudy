@@ -33,12 +33,21 @@ public class NoticeDao {
 	}
 	
 	/* 목록 반환 */
-	public List<Notice> selectNoticeList(){
+	public List<Notice> selectNoticeList(Map<String, Integer> map){
 		SqlSession ss = factory.openSession();
-		List<Notice> list = ss.selectList("dao.notice.selectNoticeList");
+		List<Notice> list = ss.selectList("dao.notice.selectNoticeList", map);
 		ss.close();
 		return list;
 	}
+	
+	/**/
+	public int selectTotalCount(){
+		SqlSession ss = factory.openSession();
+		int totalCount = ss.selectOne("dao.notice.selectTotalCount");
+		ss.close();
+		return totalCount;
+	}
+	
 	
 	/* 게시물 보기 */
 	public Notice selectNoticeView(Long nNo) {
@@ -90,5 +99,13 @@ public class NoticeDao {
 		ss.close();
 		return list;
 	}	
+	
+	/* 검색한 목록 가져오기 */
+	public int selectFindCount(Map<String, String> map) {
+		SqlSession ss = factory.openSession();
+		int findCount = ss.selectOne("dao.notice.selectFindCount", map);
+		ss.close();
+		return findCount;
+	}
 
 }

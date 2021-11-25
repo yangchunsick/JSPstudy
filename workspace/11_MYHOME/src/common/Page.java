@@ -30,7 +30,100 @@ public class Page {
 	private int beginPage;				// 각 블록에 표시하는 시작 페이지 번호(page, pagePerBlock로 계산)
 	private int endPage;				// 각 블록에 표시하는 종료 페이지 번호(beginPage, pagePerBlock, totalPage로 계산)
 	
+	// void는 반환 타입이 없음 // 여기서 모드 계산을 한다.
+	public void	setPageEntity(int totalRecord, int page) { // 외부에서 totalRecord,page를 받아 옴
+		
+		this.totalRecord = totalRecord;
+		this.page = page;
+		
+		// 전체 페이지 갯수
+		// 토탈 페이지가 50개 이면 레코드 페이지가 10 이니까
+		// 페이지 갯수는 5개가 나옴
+		// 근데 만약 
+		totalPage = totalRecord / recordPerPage;
+		if(totalRecord % recordPerPage != 0) {
+			totalPage++;
+		}
 	
+		// beginRecord, endRecord
+		beginRecord = (page - 1) * recordPerPage + 1;
+		endRecord = beginRecord + recordPerPage - 1;
+		endRecord = (totalRecord < endRecord) ? totalRecord : endRecord;
+	
+		// beginPage, endPage
+		beginPage = ((page - 1) / pagePerBlock) * pagePerBlock + 1;
+		endPage = beginPage + pagePerBlock;
+		endPage = (totalPage < endPage) ? totalPage : endPage;
+		
+	}
+	
+	public String getPageEntity(String path) {
+		StringBuilder sb = new StringBuilder();
+		
+		// path에 ? 가 포함되어 있으면 path에 파라미터가 포함되어 있다는 의미임.
+		// 예)
+		// path = "find.notice?column=WRITER&query=admin"
+		// 위와 같은 경우 page 파라미터는 "&page로 path에 추가해야 함"
+		// path = "find.notice?column=WRITER&query=admin&page="
+		
+		
+		// 1페이지로 이동 : 1페이지는 링크가 필요 없음
+		if(page == 1) {
+			sb.append("◀◀&nbsp;");
+		}else {
+			if(path.contains("?")) {
+				sb.append("<a href=\""+ path +"&page=1\">◀◀</a>&nbsp;");
+			}else {
+				sb.append("<a href=\""+ path +"?page=1\">◀◀</a>&nbsp;");
+			}
+		}
+		// 이전 블록으로 이동 : 1블록은 링크가 필요 없음.
+		
+		if(page <= pagePerBlock) {
+			sb.append("◀&nbsp;");
+		}else {
+			if(path.contains("?")) {	
+				sb.append("<a href=\""+ path +"&page=" + (beginPage - 1) + "\">◀</a>&nbsp;");
+			}else {
+				sb.append("<a href=\""+ path +"?page=" + (beginPage - 1) + "\">◀</a>&nbsp;");				
+			}
+		}
+		// 페이지 번호 : 현제 페이지는 링크가 필요 없음
+		for(int i = beginPage; i <= endPage; i++) {
+			if(page == i) {
+				sb.append(i + "&nbsp;");
+			}else {
+				if(path.contains("?")) {
+					sb.append("<a href=\""+ path +"&page=" + i + "\">" + i + "</a>&nbsp;");					
+				}else {
+					sb.append("<a href=\""+ path +"?page=" + i + "\">" + i + "</a>&nbsp;");					
+				}
+			}
+		}
+		// 다음 블록으로 이동 : 마지막 블록은 링크가 필요 없음.
+		if(endPage == totalPage) {
+			sb.append("▶&nbsp;");
+		}else {
+			if(path.contains("?")) {
+				sb.append("<a href=\""+ path +"&page="+ (endPage + 1) +"\">▶</a>&nbsp;");
+			}else {
+				sb.append("<a href=\""+ path +"?page="+ (endPage + 1) +"\">▶</a>&nbsp;");				
+			}
+		}
+		// 마지막 페이지로 이동 : 마지막 페이지는 링크가 필요 없음.
+		if(page == totalPage) {
+			sb.append("▶▶&nbsp;");
+		}else {
+			if(path.contains("?")) {
+				sb.append("<a href=\""+ path +"&page=" + totalPage + "\">▶▶</a>&nbsp;");
+			}else {
+				sb.append("<a href=\""+ path +"?page=" + totalPage + "\">▶▶</a>&nbsp;");				
+			}
+		}
+		
+		return sb.toString();
+		
+	}
 	
 	
 	

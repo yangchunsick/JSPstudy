@@ -13,6 +13,7 @@ public class Notice {
 	private Date nLastModified;
 	
 	/* Getter Setter */
+	
 	public Long getnNo() {
 		return nNo;
 	}
@@ -61,4 +62,5 @@ public class Notice {
 	public void setnLastModified(Date nLastModified) {
 		this.nLastModified = nLastModified;
 	}
+
 }

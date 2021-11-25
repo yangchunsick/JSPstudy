@@ -39,8 +39,8 @@
 			<a href="insertForm.notice">공지사항 작성하기</a>
 		</c:if>
 	</div>
-
 	<table border="1">
+		<caption>공지 수 : ${totalRecord}</caption>
 		<thead>
 			<tr>
 				<td>순번</td>
@@ -57,9 +57,9 @@
 				</tr>
 			</c:if>
 			<c:if test="${not empty list}">
-				<c:forEach items="${list}" var="notice">
+				<c:forEach varStatus="s" items="${list}" var="notice">
 					<tr>
-						<td>${notice.nNo}</td>
+						<td>${startNum - s.index}</td>	<!-- 순서대로 표시되는 순번(게시글 번호와 상관 없음) -->
 						<td><a href="view.notice?nNo=${notice.nNo}">${notice.title}</a></td>
 						<td>${notice.writer}</td>
 						<td>${notice.hit}</td>
@@ -68,6 +68,11 @@
 				</c:forEach>
 			</c:if>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" style="text-align: center;">${pageEntity}</td>
+			</tr>
+		</tfoot>
 	</table>
 </body>
 </html>

@@ -22,11 +22,18 @@ class StaffTestCase {
 		try {
 			result = StaffDAO.getInstance().insertStaff(staff);
 			
-		}catch (Exception e){}
-			assertEquals(1, result, "사원 등록에 문제가 있습니다.");			
+		}catch (Exception e){
+			assertEquals(1, result, "사원 등록에 문제가 있습니다.");						
+		}
 	}	
 	
-	
+	/*
+	//@Test
+	void test() {
+		Staff staff = StaffDAO.getInstance().insertStaff(staff);
+		assertEquals(1,l);
+	}
+	*/
 	@Test
 	void test() {
 		Staff staff = StaffDAO.getInstance().selecStaffBysNo("99999");

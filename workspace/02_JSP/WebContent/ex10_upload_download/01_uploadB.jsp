@@ -29,10 +29,10 @@
 		//    cos.jar가 제공하는 MultipartRequest 활용
 		MultipartRequest mr = new MultipartRequest(
 				/* 기존 request */	request,
-				/* 업로드 경로  */  realPath,
-				/* 최대 크기    */  10 * 1024 * 1024,
-				/* 인코딩       */  "UTF-8",
-				/* 파일명 중복  */  new DefaultFileRenamePolicy()
+				/* 업로드 경로 	  */  	realPath,
+				/* 최대 크기        */  	10 * 1024 * 1024,
+				/* 인코딩            */  	"UTF-8",
+				/* 파일명 중복     */  	new DefaultFileRenamePolicy()
 				);
 	%>
 	
