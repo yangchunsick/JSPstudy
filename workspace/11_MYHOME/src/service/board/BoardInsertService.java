@@ -50,7 +50,7 @@ public class BoardInsertService implements BoardService {
 		board.setFileName(fileName);
 		board.setSaveName(saveName);
 		
-		System.out.println(board);		//dto.Board의 toString() 동작
+		// System.out.println(toString(board));		//dto.Board의 toString() 동작
 		
 		// 첨부가 됐을 때
 		int result = BoardDao.getInstance().insertBoard(board);

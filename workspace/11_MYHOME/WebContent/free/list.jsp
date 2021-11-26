@@ -172,7 +172,7 @@
 					<!-- 페이지 번호 : 현재 페이지는 링크가 필요 없음. -->
 					<c:forEach var="i" begin="${p.beginPage}" end="${p.endPage}">
 						<c:if test="${p.page == i}">
-							${i}&nbsp;&nbsp;
+							<span style="color:red;'">${i}&nbsp;&nbsp;</span>
 						</c:if>
 						<c:if test="${p.page != i}">
 							<a href="list.free?page=${i}">${i}</a>&nbsp;&nbsp;

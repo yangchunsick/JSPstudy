@@ -7256,3 +7256,576 @@ java.lang.Exception: Resource '/InterfaceProgram2/WebContent/sql/Member.sql' doe
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+!SESSION 2021-11-26 08:45:00.693 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=1.8.0_202
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2021-11-26 08:45:32.529
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-11-26 08:45:32.529
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c8a91e2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@c7443f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-11-26 08:45:36.902
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ITSC'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jst.jee 4 2 2021-11-26 08:47:52.386
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jst.jee".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.createModelResource(JEE5ModelProvider.java:209)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.getModelResource(JEE5ModelProvider.java:190)
+	at org.eclipse.jst.jee.model.internal.Web25ModelProvider.getModelObject(Web25ModelProvider.java:44)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.getModelObject(JEE5ModelProvider.java:233)
+	at org.eclipse.jst.jee.model.internal.Web25MergedModelProvider.getXmlWebApp(Web25MergedModelProvider.java:59)
+	at org.eclipse.jst.jee.model.internal.Web25MergedModelProvider.internalModelChanged(Web25MergedModelProvider.java:155)
+	at org.eclipse.jst.jee.model.internal.Web25MergedModelProvider.xmlModelChanged(Web25MergedModelProvider.java:146)
+	at org.eclipse.jst.jee.model.internal.common.AbstractMergedModelProvider$XmlModelListener.modelsChanged(AbstractMergedModelProvider.java:91)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider$NotifyRunner.run(JEE5ModelProvider.java:470)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.notifyListeners(JEE5ModelProvider.java:445)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.resourceChanged(JEE5ModelProvider.java:117)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider$ResourceAdapter.notifyChanged(JEE5ModelProvider.java:81)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.setModified(ResourceImpl.java:1867)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl$ContentsEList.modified(ResourceImpl.java:486)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl$ContentsEList.didRemove(ResourceImpl.java:447)
+	at org.eclipse.emf.common.util.AbstractEList.didClear(AbstractEList.java:170)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl$ContentsEList.didClear(ResourceImpl.java:466)
+	at org.eclipse.emf.common.util.BasicEList.clear(BasicEList.java:639)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.doClear(NotifyingListImpl.java:1158)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.clear(NotifyingListImpl.java:1085)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.doUnload(ResourceImpl.java:1699)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doUnload(XMLResourceImpl.java:720)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.unload(ResourceImpl.java:1721)
+	at org.eclipse.jem.internal.util.emf.workbench.ProjectResourceSetImpl.removeAndUnloadAllResources(ProjectResourceSetImpl.java:885)
+	at org.eclipse.jem.internal.util.emf.workbench.ProjectResourceSetImpl.release(ProjectResourceSetImpl.java:866)
+	at org.eclipse.wst.common.internal.emfworkbench.integration.ResourceSetWorkbenchEditSynchronizer.release(ResourceSetWorkbenchEditSynchronizer.java:222)
+	at org.eclipse.jem.util.emf.workbench.ResourceSetWorkbenchSynchronizer.resourceChanged(ResourceSetWorkbenchSynchronizer.java:184)
+	at org.eclipse.wst.common.internal.emfworkbench.integration.ResourceSetWorkbenchEditSynchronizer.resourceChanged(ResourceSetWorkbenchEditSynchronizer.java:137)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:305)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:295)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:271)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:375)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1846)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:742)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:320)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:155)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:281)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:281)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.lambda$0(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:295)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:94)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:219)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:89)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.jst.jee 4 0 2021-11-26 08:47:52.388
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.createModelResource(JEE5ModelProvider.java:209)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.getModelResource(JEE5ModelProvider.java:190)
+	at org.eclipse.jst.jee.model.internal.Web25ModelProvider.getModelObject(Web25ModelProvider.java:44)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.getModelObject(JEE5ModelProvider.java:233)
+	at org.eclipse.jst.jee.model.internal.Web25MergedModelProvider.getXmlWebApp(Web25MergedModelProvider.java:59)
+	at org.eclipse.jst.jee.model.internal.Web25MergedModelProvider.internalModelChanged(Web25MergedModelProvider.java:155)
+	at org.eclipse.jst.jee.model.internal.Web25MergedModelProvider.xmlModelChanged(Web25MergedModelProvider.java:146)
+	at org.eclipse.jst.jee.model.internal.common.AbstractMergedModelProvider$XmlModelListener.modelsChanged(AbstractMergedModelProvider.java:91)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider$NotifyRunner.run(JEE5ModelProvider.java:470)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.notifyListeners(JEE5ModelProvider.java:445)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider.resourceChanged(JEE5ModelProvider.java:117)
+	at org.eclipse.jst.jee.model.internal.JEE5ModelProvider$ResourceAdapter.notifyChanged(JEE5ModelProvider.java:81)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.setModified(ResourceImpl.java:1867)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl$ContentsEList.modified(ResourceImpl.java:486)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl$ContentsEList.didRemove(ResourceImpl.java:447)
+	at org.eclipse.emf.common.util.AbstractEList.didClear(AbstractEList.java:170)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl$ContentsEList.didClear(ResourceImpl.java:466)
+	at org.eclipse.emf.common.util.BasicEList.clear(BasicEList.java:639)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.doClear(NotifyingListImpl.java:1158)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.clear(NotifyingListImpl.java:1085)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.doUnload(ResourceImpl.java:1699)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doUnload(XMLResourceImpl.java:720)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.unload(ResourceImpl.java:1721)
+	at org.eclipse.jem.internal.util.emf.workbench.ProjectResourceSetImpl.removeAndUnloadAllResources(ProjectResourceSetImpl.java:885)
+	at org.eclipse.jem.internal.util.emf.workbench.ProjectResourceSetImpl.release(ProjectResourceSetImpl.java:866)
+	at org.eclipse.wst.common.internal.emfworkbench.integration.ResourceSetWorkbenchEditSynchronizer.release(ResourceSetWorkbenchEditSynchronizer.java:222)
+	at org.eclipse.jem.util.emf.workbench.ResourceSetWorkbenchSynchronizer.resourceChanged(ResourceSetWorkbenchSynchronizer.java:184)
+	at org.eclipse.wst.common.internal.emfworkbench.integration.ResourceSetWorkbenchEditSynchronizer.resourceChanged(ResourceSetWorkbenchEditSynchronizer.java:137)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:305)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:295)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:271)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:375)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1846)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:742)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:320)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:155)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:281)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:281)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.lambda$0(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:295)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:94)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:219)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:89)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2021-11-26 08:48:12.537
+!MESSAGE Error changing index details workspace://
+!STACK 0
+java.io.FileNotFoundException: C:\Users\ITSC\Desktop\SmartWeb\jspstudy\workspace\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0_1.del (지정된 파일을 찾을 수 없습니다)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:482)
+	at org.apache.lucene.util.BitVector.<init>(BitVector.java:199)
+	at org.apache.lucene.index.SegmentReader.loadDeletedDocs(SegmentReader.java:402)
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:368)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236)
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915)
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339)
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579)
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450)
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578)
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205)
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173)
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:963)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:930)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:876)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.addRepository(RepositoryRegistry.java:165)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:238)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:49)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2021-11-26 08:48:12.537
+!MESSAGE Could not add repository index
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not add repository index
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:943)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:876)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.addRepository(RepositoryRegistry.java:165)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:238)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:49)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.FileNotFoundException: C:\Users\ITSC\Desktop\SmartWeb\jspstudy\workspace\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0_1.del (지정된 파일을 찾을 수 없습니다)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:482)
+	at org.apache.lucene.util.BitVector.<init>(BitVector.java:199)
+	at org.apache.lucene.index.SegmentReader.loadDeletedDocs(SegmentReader.java:402)
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:368)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236)
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915)
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339)
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579)
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450)
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578)
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205)
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173)
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:963)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:930)
+	... 5 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2021-11-26 08:48:12.537
+!MESSAGE Could not add repository index
+!STACK 0
+java.io.FileNotFoundException: C:\Users\ITSC\Desktop\SmartWeb\jspstudy\workspace\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_0_1.del (지정된 파일을 찾을 수 없습니다)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:482)
+	at org.apache.lucene.util.BitVector.<init>(BitVector.java:199)
+	at org.apache.lucene.index.SegmentReader.loadDeletedDocs(SegmentReader.java:402)
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:368)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236)
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915)
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339)
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579)
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450)
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578)
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205)
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173)
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:963)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:930)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:876)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.addRepository(RepositoryRegistry.java:165)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:238)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:49)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2021-11-26 08:48:12.557
+!MESSAGE Error changing index details central|https://repo.maven.apache.org/maven2
+!STACK 0
+java.io.FileNotFoundException: C:\Users\ITSC\Desktop\SmartWeb\jspstudy\workspace\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0_1.del (지정된 파일을 찾을 수 없습니다)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:482)
+	at org.apache.lucene.util.BitVector.<init>(BitVector.java:199)
+	at org.apache.lucene.index.SegmentReader.loadDeletedDocs(SegmentReader.java:402)
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:368)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236)
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915)
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339)
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579)
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450)
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578)
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205)
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173)
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:963)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:930)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:876)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.addRepository(RepositoryRegistry.java:165)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:265)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:49)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2021-11-26 08:48:12.557
+!MESSAGE Could not add repository index
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not add repository index
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:943)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:876)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.addRepository(RepositoryRegistry.java:165)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:265)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:49)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.FileNotFoundException: C:\Users\ITSC\Desktop\SmartWeb\jspstudy\workspace\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0_1.del (지정된 파일을 찾을 수 없습니다)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:482)
+	at org.apache.lucene.util.BitVector.<init>(BitVector.java:199)
+	at org.apache.lucene.index.SegmentReader.loadDeletedDocs(SegmentReader.java:402)
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:368)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236)
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915)
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339)
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579)
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450)
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578)
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205)
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173)
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:963)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:930)
+	... 5 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2021-11-26 08:48:12.557
+!MESSAGE Could not add repository index
+!STACK 0
+java.io.FileNotFoundException: C:\Users\ITSC\Desktop\SmartWeb\jspstudy\workspace\.metadata\.plugins\org.eclipse.m2e.core\nexus\05b0fe8524860bd73cbb07ef30fb34cc\_0_1.del (지정된 파일을 찾을 수 없습니다)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488)
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:482)
+	at org.apache.lucene.util.BitVector.<init>(BitVector.java:199)
+	at org.apache.lucene.index.SegmentReader.loadDeletedDocs(SegmentReader.java:402)
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:368)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306)
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236)
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915)
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339)
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579)
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450)
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578)
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235)
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205)
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173)
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:963)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:930)
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:876)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.addRepository(RepositoryRegistry.java:165)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:265)
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:49)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:48:45.480
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:48:45.481
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:48:45.484
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:50:20.624
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:50:20.625
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:50:20.625
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:50:24.792
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:50:24.792
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:50:24.793
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:12.363
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:12.363
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:12.364
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:14.407
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:14.408
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:14.408
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:56.821
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:56.821
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 08:57:56.821
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:05:22.467
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:05:22.467
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:05:22.468
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:08:20.148
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:08:20.149
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:08:20.149
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:20:52.532
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:20:52.532
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:20:52.533
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:22:42.838
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:22:42.838
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 09:22:42.839
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 10:37:23.495
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 10:37:23.496
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 10:37:23.496
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 10:37:39.655
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 10:37:39.656
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 10:37:39.656
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 12:12:19.862
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 12:12:19.862
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 12:12:19.862
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 12:25:58.371
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 12:25:58.371
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 12:25:58.372
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:11:21.597
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:11:21.598
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:11:21.598
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:14:26.262
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:14:26.262
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:14:26.263
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+!SESSION 2021-11-26 14:22:26.468 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=1.8.0_202
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data file:/C:/Users/ITSC/Desktop/SmartWeb/jspstudy/workspace/ -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2021-11-26 14:22:28.568
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-11-26 14:22:28.568
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@18bf1bad,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1cb929a9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:22:31.568
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:22:31.568
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 14:22:31.568
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-11-26 14:22:32.335
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ITSC'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 16:14:58.063
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 16:14:58.063
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 16:14:58.064
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 16:23:42.232
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 16:23:42.232
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2021-11-26 16:23:42.232
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT

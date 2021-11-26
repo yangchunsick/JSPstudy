@@ -25,11 +25,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 WHERE BNO = #{bNo}
 	</select>
 	
+	<!-- 게시물 삭제 -->
+	<delete id="deleteBoard" parameterType="Long">
+		DELETE 
+		  FROM BOARD
+		 WHERE BNO = #{bNo}
+	</delete>
+	
+	<!-- 게시물 수정 -->
+	<update id="updateBoard" parameterType="dto.Board">
+		UPDATE BOARD						
+		   SET TITLE = #{title}
+		   	 , CONTENT = #{content}
+		   	 , LASTMODIFIED = SYSDATE
+		   	   <if test="fileName != null">, FILENAME = #{fileName}</if>
+		   	   <if test="saveName != null">, SAVENAME = #{saveName}</if>
+		 WHERE BNO = #{bNo}
+	</update>
+	
 </mapper>
-
-
-
-
-
-
 

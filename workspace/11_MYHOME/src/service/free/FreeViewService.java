@@ -35,6 +35,7 @@ public class FreeViewService implements FreeService {
 		Free free = FreeDao.getInstance().selectFreeByfNo(fNo);
 		
 		if(free != null) {
+			request.setAttribute("referer", request.getHeader("referer"));	// 게시물이 존재하는 목록의 주소
 			request.setAttribute("free", free);
 			return new ModelAndView("free/view.jsp", false);
 		}else {

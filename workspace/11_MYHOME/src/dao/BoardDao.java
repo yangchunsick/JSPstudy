@@ -55,4 +55,22 @@ public class BoardDao {
 		ss.close();
 		return board;
 	}
+	
+	/* 게시물 삭제 */
+	public int deleteBoard(Long bNo) {
+		SqlSession ss = factory.openSession(false);		// () 괄호 안에 false를 넣는 이유는 오토커밋을 막기 위함
+		int result = ss.insert("dao.board.deleteBoard", bNo);
+		if(result > 0) ss.commit();
+		ss.close();
+		return result;
+	}
+	
+	/* 게시물 수정 */
+	public int updateBoard(Board board) {
+		SqlSession ss = factory.openSession(false);		// () 괄호 안에 false를 넣는 이유는 오토커밋을 막기 위함
+		int result = ss.update("dao.board.updateBoard", board);
+		if(result > 0) ss.commit();
+		ss.close();
+		return result;
+	}
 }

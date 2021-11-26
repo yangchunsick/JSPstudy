@@ -34,6 +34,7 @@
 				return;
 			}else if($('#fileName').val() == ''){
 				alert('이미지 첨부는 필수 입니다.');
+				return;
 			}
 			$('#f').attr('action', 'insert.board');		// action을 주는 속성은 attr
 			$('#f').submit();

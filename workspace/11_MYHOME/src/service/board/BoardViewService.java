@@ -20,25 +20,27 @@ public class BoardViewService implements BoardService {
 		Optional<String> opt = Optional.ofNullable(request.getParameter("bNo"));
 		Long bNo = Long.parseLong(opt.orElse("0"));
 		
-		// DB에서 Board 가져오기
+		// DB에서 board 가져오기
 		Board board = BoardDao.getInstance().selectBoardView(bNo);
-		// 이동 
-		if(board != null) { // 검색된 결과가 있으면
-			
-			// view.jsp로 보낼 데이터 저장
+		
+		if (board != null) {
+			// view.jsp로 보낼 데이터 저장하기
+			// request.setAttribute("referer", request.getHeader("referer"));	// 게시글의 목록 주소
 			request.setAttribute("board", board);
-			
-			
-			return new ModelAndView("board/view.jsp",false);
-		}else { // 검색된 결과가 없으면
+			request.setAttribute("year", new SimpleDateFormat("yyyy").format(board.getLastModified()));
+			request.setAttribute("month", new SimpleDateFormat("MM").format(board.getLastModified()));
+			request.setAttribute("day", new SimpleDateFormat("dd").format(board.getLastModified()));
+			return new ModelAndView("board/view.jsp", false);
+		} else {
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
 			out.println("alert('게시글 정보 확인 불가')");
-			out.println("history.back()'");
+			out.println("history.back()");
 			out.println("</script>");
 			out.close();
 			return null;
-		}
+		}		
+		
 	}
 
 }
