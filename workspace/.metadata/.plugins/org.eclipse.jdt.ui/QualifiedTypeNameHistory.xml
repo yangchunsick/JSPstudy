@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="dto.Free"/>
-<fullyQualifiedTypeName name="service.free.FreeFindService"/>
 <fullyQualifiedTypeName name="oracle.sql.OPAQUE"/>
 <fullyQualifiedTypeName name="jdk.nashorn.internal.runtime.regexp.joni.Option"/>
 <fullyQualifiedTypeName name="com.sun.corba.se.spi.legacy.connection.GetEndPointInfoAgainException"/>
@@ -30,7 +28,6 @@
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
-<fullyQualifiedTypeName name="dao.StudentDAO"/>
 <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterEach"/>
 <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
 <fullyQualifiedTypeName name="java.lang.Long"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="service.comments.CommentsDeleteService"/>
+<fullyQualifiedTypeName name="dao.StudentDAO"/>
+<fullyQualifiedTypeName name="jdk.nashorn.internal.ir.SetSplitState"/>
+<fullyQualifiedTypeName name="java.lang.ExceptionInInitializerError"/>
 </qualifiedTypeNameHistroy>

@@ -43,7 +43,7 @@
 		$('#insert_btn').on('click', function() {
 			let regsno = /^[0-9]{5}$/;
 			if(!regsno.test($('#sno').val())){
-				alert('학번을 다시 입력하세요.');
+				alert('학번은 5자리 숫자 입니다.');
 				return;
 			}
 			
@@ -57,7 +57,7 @@
 				fnStudentList();				
 			},
 			error : function(xhr) {
-				if(xhr.status == 2001 || xhr.status == 2003 || xhr.status == 2004){
+				if (xhr.status == 2001 | xhr.status == 2002 | xhr.status == 2003 | xhr.status == 2004){
 					alert(xhr.responseText);
 				}
 			}

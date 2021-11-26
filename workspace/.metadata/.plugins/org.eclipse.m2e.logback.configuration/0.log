@@ -168,3 +168,4 @@ Caused by: java.io.FileNotFoundException: C:\Users\ITSC\Desktop\SmartWeb\jspstud
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:930) ~[org.eclipse.m2e.core_1.16.0.20200605-0817.jar:na]
 	... 5 common frames omitted
 2021-11-26 14:22:31,052 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-11-26 17:14:30,398 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

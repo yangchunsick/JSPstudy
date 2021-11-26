@@ -27,6 +27,8 @@ public class InsertService implements StudentService {
 
 			if(midterm < 0 || midterm > 100 || finalterm < 0 || finalterm > 100 ) {
 				throw new RuntimeException("점수는 0 ~ 100 사이만 가능합니다.");
+				
+				
 			}
 							
 			double ave = (midterm + finalterm) / 2.0;
@@ -36,20 +38,14 @@ public class InsertService implements StudentService {
 			}else {
 				pass = "N";
 			}
-			
-			
+	
 			Student student = new Student();
-			
-			/*
 			student.setSno(sno);
 			student.setName(name);
 			student.setMidterm(midterm);
 			student.setFinalterm(finalterm);
 			student.setPass(pass);
-			*/
-			Student student = new Student();
-			student.setSno(sno);
-	
+			
 			int result = StudentDAO.getInstance().insertStudent(student);
 			
 			JSONObject obj = new JSONObject();
@@ -70,28 +66,24 @@ public class InsertService implements StudentService {
 			
 		}catch (RuntimeException e) {
 			response.setContentType("text/plain; charset=UTF-8");
-			
-			PrintWriter out = response.getWriter();
-			out.println("숫자의 범위는 0 ~ 100 사이 입니다.");
-			
-			response.setStatus(2002);
-		}catch (SQLIntegrityConstraintViolationException e) {
-			response.setContentType("text/plain; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
-			out.println("이미 존재하는 학번은 추가할 수 없습니다.");
-
-			response.setStatus(2003);
-		} catch (SQLException e) {
+			out.println("점수는 0 ~ 100 사이만 가능합니다.");
+			
+			response.setStatus(2002);	
+		}catch (SQLException e) {
 			response.setContentType("text/plain; charset=UTF-8");
 
 			PrintWriter out = response.getWriter();
 			out.println("잘못된 데이터가 전달 되었습니다.");
 			
-			response.setStatus(2004);			
-		} 
+			response.setStatus(2004);	
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 				
-		
+
 	}
 
 }

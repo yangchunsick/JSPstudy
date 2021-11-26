@@ -19,7 +19,7 @@ public class SelectLIstService implements StudentService {
 		/** 학생 목록을 JSON 형식으로 변경한 뒤 응답 처리 **/
 
 		// 1. DB에서 학생 목록을 가져오기 // StudentDAO를 이용하여 목록을 가져옴
-		List<Student> list = StudentDAO.getInstance().selectCommentsList();		// Dao에서 SelectStudent를 가져와라
+		List<Student> list = StudentDAO.getInstance().selectStudentList();		// Dao에서 SelectStudent를 가져와라
 		
 		// 2. 가져온 학생 목록을  JSON 형식으로 변경하기
 		JSONArray students = new JSONArray(list);	// list를 JSON 형식으로 변환
