@@ -86,12 +86,12 @@ public class MemberDao {
 	
 	public int insertMember(Member member) throws SQLIntegrityConstraintViolationException, SQLException{
 		int result = 0;
-		con = getConnection();
-		sql = "INSERT INTO MEMBER VALUES(?, ?, ?, ?, SYSDATE)";
-		ps = con.prepareStatement(sql);
-		ps.setString(1, member.getNo());
-		ps.setString(2, member.getName());
-		ps.setInt(3, member.getAge());
+		con = getConnection();										// DB에 커넥션 접속 한다
+		sql = "INSERT INTO MEMBER VALUES(?, ?, ?, ?, SYSDATE)";		// 쿼리문 작성
+		ps = con.prepareStatement(sql);								
+		ps.setString(1, member.getNo());							
+		ps.setString(2, member.getName());							
+		ps.setInt(3, member.getAge());								
 		ps.setString(4, member.getBirthDay());
 		result = ps.executeUpdate();
 		close(con, ps, null);

@@ -25,7 +25,7 @@
 	<script>
 		setTimeout(function() {
 			location.href = '/YM/familyList.do';
-		}, 2000);
+		}, 1000);
 	</script>
  
 	<div class="warp">

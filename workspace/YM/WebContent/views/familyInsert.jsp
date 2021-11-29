@@ -49,11 +49,17 @@ tfoot input:hover {
 	background-color: white;
 }
 </style>
+<script>
+$(document).ready(function(){
+	
+	
+});
+</script>
 
 </head>
 <body>
 
-				<h1 class="title">조직원 추가</h1>
+<h1 class="title">조직원 추가</h1>
 	<div class="wrap">
 		<form action="/YM/familyinsert.do" method="post">
 			<table border="1">
@@ -67,7 +73,7 @@ tfoot input:hover {
 				</thead>
 				<tbody>
 					<tr>
-						<td><input type="text" name="num" autofocus></td>
+						<td><input type="text" id="num" name="num" autofocus></td>
 						<td><input type="text" name="name"></td>
 						<td><input type="text" name="depart"></td>
 						<td><input type="text" name="birthday"></td>

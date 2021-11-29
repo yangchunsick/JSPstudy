@@ -17,13 +17,13 @@ public class SelectMemberListCommand implements MemberService {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		List<Member> list = MemberDao.getInstance().selectMemberList();
+		List<Member> list = MemberDao.getInstance().selectMemberList();			// 회원들의 목록을 가져옴
 		
-		JSONArray members = new JSONArray(list);
+		JSONArray members = new JSONArray(list);								// JSON 방식으로 보내기 위해서 JSONObject로 담음
 		
-		response.setContentType("application/json; charset=UTF-8");	
+		response.setContentType("application/json; charset=UTF-8");				// JSON 형식의 데이터로 변화
 		
-		PrintWriter out = response.getWriter();
+		PrintWriter out = response.getWriter();									// 출력
 		out.println(members);
 		out.close();
 	}

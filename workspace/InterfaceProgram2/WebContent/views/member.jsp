@@ -51,14 +51,14 @@
 			success: function (members) {				// MemberListService에서 List목록을 members로 지정 했음 정상적으로 받아 왔을 때
 				$('#member_list').empty();				// member_list를 한 번 비워줌
 				$.each(members, function (i, member) {	// 받아 온 값들을
-					$('<tr>')							
-					.append($('<td>').text(member.no))
-					.append($('<td>').text(member.name))
-					.append($('<td>').text(member.age))
+					$('<tr>')							// <tr> 태그를 추가
+					.append($('<td>').text(member.no))	// <td> 태그를 추가 td태그 안에는 member.no가 넘어 올 예정
+					.append($('<td>').text(member.name))// 						   member.name 넘어 올 예정
+					.append($('<td>').text(member.age))	// 						   
 					.append($('<td>').text(member.birthDay))
 					.append($('<td>').text(member.regDate))
-					.append($('<td>').html('<input type="button" value="삭제" class="delete_btn" data-no="' + member.no + '">') )
-					.appendTo('#member_list');
+					.append($('<td>').html('<input type="button" value="삭제" class="delete_btn" data-no="' + member.no + '">')) // 해당 번호를 가지고 있는 회원 목록을 지우기 위해 data 속성을 사용 회원의 번호는 member.no로 가져옴
+					.appendTo('#member_list');	// 위에 tr태그와 td 태그들을 member_list 안에 넣었음
 				});
 			},
 			error : function(xhr){
@@ -75,24 +75,24 @@
 				return;
 			}
 			$.ajax({
-				url : '/InterfaceProgram2/insert.do',
-				type : 'post',
-				data : $('#f').serialize(), // form안에 입력한 param들을 모두 보낸다..!
-				dataType : 'json',
-				success : function(obj) {
-					alert('회원 등록이 성공했습니다.');
-					fnMemberList();
-					$('#no').val('');
+				url : '/InterfaceProgram2/insert.do',		// 요청 경로
+				type : 'post',								// 전송 방식은 POST로 숨겨서 보냄
+				data : $('#f').serialize(), 				// form안에 입력한 param들을 모두 보낸다..!
+				dataType : 'json',							// 데이터 타입은 JSON 방식을 이용
+				success : function(obj) {					// 성공 했을 경우 obj에 저장 (?)
+					alert('회원 등록이 성공했습니다.');			// 성공 했을 경우 성공 알림 메시지를 띄움
+					fnMemberList();							// 회원을 추가 했으니 새로 목록을 띄움
+					$('#no').val('');						// 회원을 정상 적으로 추가 했을 때 input 태그 안에 있는 값들이 남아 있길래 val('') 비워 줌
 					$('#name').val('');
 					$('#age').val('');
 					$('#birthDay').val('');
 				},
-				error: function(xhr) {
-					switch (xhr.status) {
-					case 2001: 
-					case 2002: 
-					case 2003:
-					case 2004:
+				error: function(xhr) {						// 회원 추가가 실패 했을 경우
+					switch (xhr.status) {					// 예외 처리를 하나씩 잡아 줬음
+					case 2001: 								// 예를 들어 나이는 정수로 입력을 해야되는데 문자열로 입력을 했다던가
+					case 2003:								// 나이에 대한 범위를 벗어나서 입력을 했다던가
+					case 2002: 								// 입력란을 모두 충족 시키지 못 했다던가
+					case 2004:								// 일어 날 수 있는 오류들을 Exception 예외 처리로 잡아 줬음
 					case 2005:
 						alert(xhr.responseText);
 					}
