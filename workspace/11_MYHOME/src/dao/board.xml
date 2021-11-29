@@ -10,12 +10,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO BOARD
 		VALUES (BOARD_SEQ.NEXTVAL, #{writer}, #{title}, #{content}, #{fileName}, #{saveName}, SYSDATE, SYSDATE)
 	</insert>
+
+	<!-- 페이징 작업 -->
+	<select id="selectTotalCount" resultType="int">
+		SELECT COUNT(*)
+		  FROM BOARD
+	</select> 
 	
-	<!-- 목록들 가져오기 -->
-	<select id="selectBoardList" resultType="dto.Board">
-	  SELECT BNO, WRITER, TITLE, CONTENT, FILENAME, SAVENAME, CREATED, LASTMODIFIED
-		FROM BOARD
-	   ORDER BY BNO DESC
+	<!-- 목록들 가져오기  페이징 작업-->
+	<select id="selectBoardList" resultType="dto.Board" parameterType="Map">
+	  SELECT B.BNO, B.WRITER, B.TITLE, B.CONTENT, B.FILENAME, B.SAVENAME, B.CREATED, B.LASTMODIFIED
+		FROM (SELECT ROWNUM AS RN, A.BNO, A.WRITER, A.TITLE, A.CONTENT, A.FILENAME, A.SAVENAME, A.CREATED, A.LASTMODIFIED
+				FROM (SELECT BNO, WRITER, TITLE, CONTENT, FILENAME, SAVENAME, CREATED, LASTMODIFIED
+						FROM BOARD
+					   ORDER BY BNO DESC) A) B
+	  WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord}
 	</select>
 	
 	<!-- 게시물 상게 보기 -->
@@ -42,6 +51,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		   	   <if test="saveName != null">, SAVENAME = #{saveName}</if>
 		 WHERE BNO = #{bNo}
 	</update>
+	
+
 	
 </mapper>
 

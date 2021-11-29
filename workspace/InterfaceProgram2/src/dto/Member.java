@@ -8,7 +8,7 @@ public class Member {
 	private String name;
 	private int age;
 	private String birthDay;
-	private Date date;
+	private Date regDate;
 	
 	/**/
 	public String getNo() {
@@ -35,10 +35,17 @@ public class Member {
 	public void setBirthDay(String birthDay) {
 		this.birthDay = birthDay;
 	}
-	public Date getDate() {
-		return date;
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
+	
+	@Override
+	public String toString() {
+		return "Member [no=" + no + ", name=" + name + ", age=" + age + ", birthDay=" + birthDay + ", regDate="
+				+ regDate + "]";
+	}
+	
 }

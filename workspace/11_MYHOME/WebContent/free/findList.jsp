@@ -164,8 +164,7 @@ $(document).ready(function(){
 
 					<c:if test="${free.state == -1 }">
 						<tr>
-							<td colspan="6" style="text-align: center;" title="삭제된 게시글 입니다.">삭제된게시글
-								입니다.</td>
+							<td colspan="6" style="text-align: center;" title="삭제된 게시글 입니다.">삭제된 게시글 입니다.</td>
 						</tr>
 					</c:if>
 

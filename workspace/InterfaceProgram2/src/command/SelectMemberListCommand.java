@@ -19,12 +19,12 @@ public class SelectMemberListCommand implements MemberService {
 
 		List<Member> list = MemberDao.getInstance().selectMemberList();
 		
-		JSONArray members = new JSONArray(list);	// list를 JSON Array에 members로 저장 
+		JSONArray members = new JSONArray(list);
 		
-		response.setContentType("application/json; charset=UTF-8");
+		response.setContentType("application/json; charset=UTF-8");	
 		
 		PrintWriter out = response.getWriter();
-		out.println(members);	// success function() 괄호 안으로 가는 거임
+		out.println(members);
 		out.close();
 	}
 

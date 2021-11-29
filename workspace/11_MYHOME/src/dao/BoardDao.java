@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -40,10 +41,17 @@ public class BoardDao {
 		return result;
 	}
 	
-	/* 목록 불러오기 */
-	public List<Board> selectBoardList(){
+	public int selectTotalCount() {
 		SqlSession ss = factory.openSession();
-		List<Board> list = ss.selectList("dao.board.selectBoardList");
+		int totalRecord = ss.selectOne("dao.board.selectTotalCount");
+		ss.close();
+		return totalRecord;
+	}
+	
+	/* 목록 불러오기 */ /* 페이징 작업 */
+	public List<Board> selectBoardList(Map<String, Integer> map){
+		SqlSession ss = factory.openSession();
+		List<Board> list = ss.selectList("dao.board.selectBoardList", map);
 		ss.close();
 		return list;
 	}
@@ -73,4 +81,5 @@ public class BoardDao {
 		ss.close();
 		return result;
 	}
+
 }
